@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "container_image": "odsai/ecup26-matching-baseline:1.0",
+  "container_digest": "sha256:c3b6941436135594c178183f29689e0e138a226aacbab7da2cc7b6e62dfb12a0",
+  "container_license": "NVIDIA Deep Learning Container License",
+  "container_dependencies": [
+    {"name": "numpy", "version": "2.2.3", "license": "BSD-3-Clause"},
+    {"name": "pandas", "version": "2.2.3", "license": "BSD-3-Clause"},
+    {"name": "pyarrow", "version": "25.0.0", "license": "Apache-2.0"},
+    {"name": "torch", "version": "2.10.0+cu128", "license": "BSD-3-Clause"},
+    {"name": "transformers", "version": "5.14.1", "license": "Apache-2.0"},
+    {"name": "tokenizers", "version": "0.22.2", "license": "Apache-2.0"},
+    {"name": "safetensors", "version": "0.8.0", "license": "Apache-2.0"},
+    {"name": "huggingface-hub", "version": "1.27.0", "license": "Apache-2.0"}
+  ],
+  "vendored_dependencies": [
+    {
+      "name": "orjson",
+      "version": "3.12.0",
+      "license": "Apache-2.0 OR MIT"
+    }
+  ],
+  "pretrained_model": {
+    "name": "nlpai-lab/LAMAR-600m",
+    "source": "https://huggingface.co/nlpai-lab/LAMAR-600m",
+    "revision": "3af1f97945392da8ef46217640641355928aeb59",
+    "license": "MIT",
+    "license_evidence": {
+      "source": "Pinned README.md card metadata and License section",
+      "url": "https://huggingface.co/nlpai-lab/LAMAR-600m/resolve/3af1f97945392da8ef46217640641355928aeb59/README.md",
+      "sha256": "47008a138bba38c3abbf0adc363234bbfc10f346f057d05dca6284357b6b0fd3"
+    },
+    "upstream_base_model": {
+      "name": "BAAI/bge-m3-retromae",
+      "declared_license": "MIT",
+      "exact_revision_declared_by_candidate": false
+    },
+    "derivative_training": [
+      {
+        "stage": "organizer LLM soft-label training",
+        "source": "item-disjoint allowed partition of organizer matches_llm.parquet",
+        "rows": 9063970
+      },
+      {
+        "stage": "human gold fine-tuning",
+        "source": "organizer matches.parquet",
+        "rows": 365654
+      }
+    ]
+  }
+}

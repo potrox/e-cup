@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "container_image": "odsai/ecup26-matching-baseline:1.0",
+  "container_digest": "sha256:c3b6941436135594c178183f29689e0e138a226aacbab7da2cc7b6e62dfb12a0",
+  "container_license": "NVIDIA Deep Learning Container License",
+  "container_dependencies": [
+    {
+      "name": "numpy",
+      "version": "2.2.3",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "pandas",
+      "version": "2.2.3",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "pyarrow",
+      "version": "25.0.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "torch",
+      "version": "2.10.0+cu128",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "transformers",
+      "version": "5.14.1",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.22.2",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "huggingface-hub",
+      "version": "1.27.0",
+      "license": "Apache-2.0"
+    }
+  ],
+  "vendored_dependencies": [
+    {
+      "name": "orjson",
+      "version": "3.12.0",
+      "license": "Apache-2.0 OR MIT"
+    }
+  ],
+  "archive_dependencies": [
+    {
+      "name": "ecup_matching ensemble runtime",
+      "origin": "project-owned",
+      "license": "competition submission code"
+    },
+    {
+      "name": "RuModernBERT-base derived checkpoint",
+      "origin": "immutable audited Task 1 release",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "LAMAR-600m derived checkpoint",
+      "origin": "immutable audited Task 1 release",
+      "license": "MIT"
+    },
+    {
+      "name": "teacher-distilled RuModernBERT-base checkpoint",
+      "origin": "exact lineage-validated Task 1 release component",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "Qwen/Qwen3.5-9B label teacher",
+      "origin": "local teacher scoring only; model weights are not shipped",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "license": "Apache-2.0"
+    }
+  ],
+  "source_archives": {
+    "rumodernbert_base": {
+      "sha256": "b3a033dae4ddc4b8ec915bcdcb6e106b99503460bd206ba13fa24a731e3d7c03",
+      "bytes": 555936841
+    },
+    "lamar_600m": {
+      "sha256": "f5f3f0ac1259ce27e3a43633ffadf6c90d371af7a9ef6d6737a596b96519d88f",
+      "bytes": 2047237301
+    },
+    "teacher_student": {
+      "sha256": "764b50eb05dd8ba5a0647a00a7bef48d39531a6dd426c643e44c920e100e8524",
+      "bytes": 555935632
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "container_image": "odsai/ecup26-matching-baseline:1.0",
+  "container_digest": "sha256:c3b6941436135594c178183f29689e0e138a226aacbab7da2cc7b6e62dfb12a0",
+  "container_license": "NVIDIA Deep Learning Container License",
+  "archive_dependencies": [
+    {
+      "name": "ecup_matching neural runtime code",
+      "origin": "project-owned",
+      "license": "competition submission code"
+    },
+    {
+      "name": "RuModernBERT-base sequence-classification artifacts",
+      "origin": "derived locally from the pinned deepvk/RuModernBERT-base checkpoint using organizer-provided LLM soft labels followed by human gold labels",
+      "license": "Apache-2.0 base model plus dataset-derived submission artifacts"
+    }
+  ],
+  "container_dependencies": [
+    {"name": "numpy", "version": "2.2.3", "license": "BSD-3-Clause"},
+    {"name": "pandas", "version": "2.2.3", "license": "BSD-3-Clause"},
+    {"name": "pyarrow", "version": "25.0.0", "license": "Apache-2.0"},
+    {"name": "torch", "version": "2.10.0+cu128", "license": "BSD-3-Clause"},
+    {"name": "transformers", "version": "5.14.1", "license": "Apache-2.0"},
+    {"name": "tokenizers", "version": "0.22.2", "license": "Apache-2.0"},
+    {"name": "safetensors", "version": "0.8.0", "license": "Apache-2.0"},
+    {"name": "huggingface-hub", "version": "1.27.0", "license": "Apache-2.0"}
+  ],
+  "vendored_dependencies": [
+    {
+      "name": "orjson",
+      "version": "3.12.0",
+      "license": "Apache-2.0 OR MIT"
+    }
+  ],
+  "pretrained_model": {
+    "name": "deepvk/RuModernBERT-base",
+    "source": "https://huggingface.co/deepvk/RuModernBERT-base",
+    "revision": "8aee6f818db9070b635a549580dc64dcfa03e39a",
+    "license": "Apache-2.0",
+    "license_evidence": {
+      "source": "README.md front matter at the pinned revision",
+      "sha256": "ae1bfc0e6cb83d6b4aacb0546d224ef6b003d86b1bed93a93a2a33c8141724d9"
+    },
+    "derivative_training": [
+      {
+        "stage": "LLM soft-label training",
+        "source": "organizer-provided matches_llm.parquet item-disjoint train partition",
+        "rows": 9063970
+      },
+      {
+        "stage": "human gold fine-tuning",
+        "source": "organizer-provided matches.parquet",
+        "rows": 365654
+      }
+    ]
+  }
+}

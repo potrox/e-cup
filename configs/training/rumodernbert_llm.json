@@ -1,0 +1,47 @@
+{
+  "schema_version": 2,
+  "source_profile": "base_lamar_v1",
+  "entry_point": "scripts/train_neural_matcher.py",
+  "model": {
+    "name": "deepvk/RuModernBERT-base",
+    "revision": "8aee6f818db9070b635a549580dc64dcfa03e39a",
+    "local_path": "models/pretrained/rumodernbert_base"
+  },
+  "train": "data_derived/neural/pairs_full_v1/llm_train.parquet",
+  "validation": "data_derived/neural/pairs_full_v1/llm_validation.parquet",
+  "validation_kind": "llm",
+  "output_dir": "artifacts/neural/rumodernbert_base_winning_cycle_v1/llm_stage_full",
+  "expected_inputs": [
+    {"path": "data_derived/neural/pairs_full_v1/llm_train.parquet", "rows": 9063970, "sha256": "e21376f668ae4a67fa80803a9841b8a5eceab2601863fe09a9774eb5dcef3937"},
+    {"path": "data_derived/neural/pairs_full_v1/llm_validation.parquet", "rows": 111404, "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d"}
+  ],
+  "expected_source_files": [
+    {"path": "source_profiles/base_lamar_v1/scripts/train_neural_matcher.py", "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"},
+    {"path": "source_profiles/base_lamar_v1/src/ecup_matching/neural_training.py", "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"},
+    {"path": "source_profiles/base_lamar_v1/src/ecup_matching/serialization.py", "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"},
+    {"path": "source_profiles/base_lamar_v1/src/ecup_matching/metrics.py", "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"},
+    {"path": "source_profiles/base_lamar_v1/src/ecup_matching/llm_diagnostics.py", "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"}
+  ],
+  "arguments": {
+    "epochs": 1,
+    "batch_size": 48,
+    "eval_batch_size": 512,
+    "gradient_accumulation": 1,
+    "learning_rate": 0.00002,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "max_length": 256,
+    "max_attribute_characters": 2048,
+    "serialization_mode": "item_v1",
+    "read_batch_size": 4096,
+    "pair_swap_probability": 0.5,
+    "loss_mode": "row_mean",
+    "confidence_gamma": 0.0,
+    "hard_replay_fraction": 0.0,
+    "seed": 2026,
+    "log_every": 250,
+    "checkpoint_selection": "last_epoch",
+    "no_prefetch": true,
+    "checkpoint_every_optimizer_steps": 5000
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "stages": [
+    {
+      "name": "verify_raw_inputs",
+      "command": ["{python}", "scripts/verify_data_lineage.py", "--group", "raw_inputs"]
+    },
+    {
+      "name": "fetch_pretrained_models",
+      "command": ["{python}", "scripts/fetch_pretrained_models.py"]
+    },
+    {
+      "name": "human_item_disjoint_folds",
+      "command": ["{python}", "scripts/make_splits.py", "--data-dir", ".", "--output-dir", "data_derived/splits", "--folds", "5", "--seed", "2026"]
+    },
+    {
+      "name": "joined_pair_tables",
+      "command": ["{python}", "scripts/prepare_neural_pairs.py", "--matches-llm", "matches_llm.parquet", "--items", "items.parquet", "--human-folds", "data_derived/splits/human_folds.parquet", "--items-human", "items_human.parquet", "--output-dir", "data_derived/neural/pairs_full_v1", "--llm-validation-modulus", "10", "--llm-train-sample-modulus", "1", "--sample-seed", "2026", "--duckdb-memory-limit", "4GB", "--include-surface-similarity"]
+    },
+    {
+      "name": "nested_human_folds",
+      "command": ["{python}", "scripts/make_nested_human_pairs.py", "--input", "data_derived/neural/pairs_full_v1/human_all.parquet", "--output", "data_derived/neural/pairs_v2/human_all_nested.parquet", "--inner-folds", "5", "--inner-validation-fold", "0", "--seed", "2027"]
+    },
+    {
+      "name": "verify_core_training_inputs",
+      "command": ["{python}", "scripts/verify_data_lineage.py", "--group", "core_training_inputs"]
+    },
+    {
+      "name": "rumodernbert_llm",
+      "command": ["{python}", "scripts/run_training_config.py", "--config", "configs/training/rumodernbert_llm.json"]
+    },
+    {
+      "name": "rumodernbert_human_gold",
+      "command": ["{python}", "scripts/run_training_config.py", "--config", "configs/training/rumodernbert_human_gold.json"]
+    },
+    {
+      "name": "rumodernbert_gold_consolidation",
+      "command": ["{python}", "scripts/run_training_config.py", "--config", "configs/training/rumodernbert_gold_consolidation.json"]
+    },
+    {
+      "name": "lamar_llm",
+      "command": ["{python}", "scripts/run_training_config.py", "--config", "configs/training/lamar_llm.json"]
+    },
+    {
+      "name": "lamar_human_gold",
+      "command": ["{python}", "scripts/run_training_config.py", "--config", "configs/training/lamar_human_gold.json"]
+    },
+    {
+      "name": "teacher_candidate_pool",
+      "command": ["{python}", "scripts/materialize_teacher_candidate_pool.py", "--input", "data_derived/neural/pairs_full_v1/llm_train.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/candidate_pool_300k.parquet", "--rows", "300000", "--weak-fraction", "0.75", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_candidate_base_scores",
+      "command": ["{python}", "scripts/evaluate_neural_matcher.py", "--model", "artifacts/neural/gold_consolidation_aggressive_v2/gold_full/best", "--validation", "data_derived/neural/teacher_hard_distillation_v1/candidate_pool_300k.parquet", "--validation-kind", "llm", "--output-dir", "artifacts/neural/teacher_hard_distillation_v1/candidate_scores_base_l384", "--batch-size", "512", "--max-length", "384", "--serialization-mode", "item_v1", "--max-rows", "300000", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_candidate_lamar_scores",
+      "command": ["{python}", "scripts/evaluate_neural_matcher.py", "--model", "artifacts/neural/lamar_600m_winning_cycle_v1/gold_full/best", "--validation", "data_derived/neural/teacher_hard_distillation_v1/candidate_pool_300k.parquet", "--validation-kind", "llm", "--output-dir", "artifacts/neural/teacher_hard_distillation_v1/candidate_scores_lamar_l256", "--batch-size", "96", "--max-length", "256", "--serialization-mode", "item_v1", "--max-rows", "300000", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_scoring_subset",
+      "command": ["{python}", "scripts/select_teacher_scoring_subset.py", "--candidates", "data_derived/neural/teacher_hard_distillation_v1/candidate_pool_300k.parquet", "--base", "artifacts/neural/teacher_hard_distillation_v1/candidate_scores_base_l384/predictions.parquet", "--lamar", "artifacts/neural/teacher_hard_distillation_v1/candidate_scores_lamar_l256/predictions.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--rows", "80000", "--weak-fraction", "0.75", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_0",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_0.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "0", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_1",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_1.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "1", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_2",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_2.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "2", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_3",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_3.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "3", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_4",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_4.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "4", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_5",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_5.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "5", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_6",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_6.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "6", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_score_shard_7",
+      "command": ["{python}", "scripts/score_causal_teacher.py", "--model", "models/pretrained/qwen35_9b", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scoring_subset_80k.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards/teacher_shard_7.parquet", "--prompt-mode", "category_rules", "--batch-size", "10", "--max-length", "768", "--max-attribute-characters", "1600", "--shard-count", "8", "--shard-index", "7", "--bidirectional", "--seed", "2026"]
+    },
+    {
+      "name": "teacher_combine_shards",
+      "command": ["{python}", "scripts/combine_teacher_shards.py", "--input-dir", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_qwen35_9b_shards", "--pattern", "teacher_shard_{index}.parquet", "--shard-count", "8", "--expected-rows", "80000", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_80k_qwen35_9b.parquet"]
+    },
+    {
+      "name": "teacher_apply_frozen_calibration",
+      "command": ["{python}", "scripts/apply_frozen_teacher_calibration.py", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_80k_qwen35_9b.parquet", "--calibration", "evidence/teacher_calibration.json", "--output", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_80k_qwen35_9b_calibrated.parquet"]
+    },
+    {
+      "name": "teacher_replay",
+      "command": ["{python}", "scripts/materialize_teacher_corrected_replay.py", "--input", "data_derived/neural/teacher_hard_distillation_v1/teacher_scored_80k_qwen35_9b_calibrated.parquet", "--output", "data_derived/neural/teacher_hard_distillation_v1/replay_calibrated_w100_78k.parquet", "--rows", "78000", "--weak-fraction", "0.75", "--teacher-weight", "1.0", "--teacher-probability-column", "teacher_probability_calibrated", "--seed", "2026"]
+    },
+    {
+      "name": "verify_teacher_training_input",
+      "command": ["{python}", "scripts/verify_data_lineage.py", "--group", "teacher_training_input"]
+    },
+    {
+      "name": "teacher_student_replay",
+      "command": ["{python}", "scripts/run_training_config.py", "--config", "configs/training/teacher_student_replay.json"]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "official_metric": "unweighted mean of sklearn.metrics.average_precision_score over 20 categories",
+  "base_lamar_router": {
+    "source_report_sha256": "88bce6e1638e5f297c40a0f213c9a6382e71c4c8f6604e522510a371768249ba",
+    "local_oof": 0.8025451773142886,
+    "uplift_vs_base": 0.007906977462236897,
+    "selected_categories": 17
+  },
+  "base_length_router": {
+    "source_report_sha256": "0b415777dd23be5989773fdca9206865f6e0960b2f4175bf3fb88055873f3d00",
+    "default_max_length": 256,
+    "routed_max_length": 384,
+    "selected_categories": ["Мебель", "Обувь", "Одежда"],
+    "local_oof": 0.8041819050090279,
+    "positive_folds": 5
+  },
+  "teacher_residual": {
+    "contract_sha256": "8f886df18d9b0adcaa60f4ffd9d32ac36eb7b9f3222ab939a442653c5328d771",
+    "source_report_sha256": "d29747df074034928a6699b83bb91c6232fa12fef07f1cffc314a5fce34e2c83",
+    "selection_report_sha256": "2921ce3f2dc71e1495d5b10af9b0c50d120c0627a16504171fca05a75d6a6653",
+    "local_oof": 0.8044056080433284,
+    "uplift": 0.0002237030343005264,
+    "positive_folds": 5
+  },
+  "postblend": {
+    "source_report_sha256": "7b59d30ada39c97e5ced2890ba7fbecef1751ef65cf8e16e6154a2836baebf51",
+    "reference_local_oof": 0.8044056080433284,
+    "local_oof": 0.8051916243386735,
+    "uplift": 0.0007860162953451377,
+    "positive_folds": 5,
+    "selection_protocol": "five-fold source-fold cross-fit"
+  },
+  "deployed_parameters": "release_profiles/full_postblend_h100_v1/ensemble_manifest.json"
+}

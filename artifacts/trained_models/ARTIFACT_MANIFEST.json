@@ -1,0 +1,62 @@
+{
+  "contained_trained_model_weights": [
+    {
+      "bytes": 598436708,
+      "crc32": "6f133fdc",
+      "path": "models/rumodernbert_base/model.safetensors",
+      "sha256": "ddef9d16ad7878ca8b1391c5c7ae9acdce281e58fe137f04a379f87b941848fd"
+    },
+    {
+      "bytes": 2271071852,
+      "crc32": "c0cef67e",
+      "path": "models/lamar_600m/model.safetensors",
+      "sha256": "f3359ee68e96bfe3d1fc9cd258b0aa00d2c1e113d99065a59190576edbe23761"
+    },
+    {
+      "bytes": 598436708,
+      "crc32": "5d322e71",
+      "path": "models/teacher_student/model.safetensors",
+      "sha256": "f1b9e4a9d614912ce6678e0b108e9b09e19827bacbe71ce4a4828a1cf211b1e6"
+    }
+  ],
+  "parts": [
+    {
+      "bytes": 536870912,
+      "path": "ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0001-of-0006",
+      "sha256": "e383926b29646587e4c274a8843fe3c45142409d483f8c0ea840e49b760904da"
+    },
+    {
+      "bytes": 536870912,
+      "path": "ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0002-of-0006",
+      "sha256": "822ccd0eee7ba3c784c1555882b751a80b5f273838845bbfa91d7a2839f2d6ca"
+    },
+    {
+      "bytes": 536870912,
+      "path": "ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0003-of-0006",
+      "sha256": "bd004be9697da29a707d76e218492b359b02d0f5ae618576f6d4ccfa1bf9fafd"
+    },
+    {
+      "bytes": 536870912,
+      "path": "ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0004-of-0006",
+      "sha256": "7694d60d6a6ece7ebc8b3a8f345b1d1e0450da8460b5eccc623ad1638a5e7d57"
+    },
+    {
+      "bytes": 536870912,
+      "path": "ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0005-of-0006",
+      "sha256": "b2a95b23784cbb36542abe3c0d1048f8c0c2678650d38a7ad704c08958bf4d2a"
+    },
+    {
+      "bytes": 474718416,
+      "path": "ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0006-of-0006",
+      "sha256": "c3a3dc06a3795f33967e0f35882fbf1ba3e8b8f353fbc55340efb7a3dc22a256"
+    }
+  ],
+  "protocol": "ordered byte split of the exact selected release",
+  "reconstructed_artifact": {
+    "bytes": 3159072976,
+    "name": "ECUP2026_task1_final_full_postblend_h100_v1.zip",
+    "sha256": "bac701732a04c6b74f5dbbcb0d4fe969a7c80aacc0255a5c3b47f7d02b5095e5"
+  },
+  "schema_version": 1,
+  "shared_weights_note": "The second selected release uses the same three weight payloads; its distinct frozen inference profile is versioned under release_profiles."
+}

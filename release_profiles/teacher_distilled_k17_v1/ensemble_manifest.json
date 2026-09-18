@@ -1,0 +1,837 @@
+{
+  "schema_version": 1,
+  "release_name": "ECUP2026_task1_teacher_distilled_k17_v1",
+  "runtime_integrity": {
+    "artifact_size": true,
+    "artifact_sha256": false,
+    "archive_crc_and_sha256_verified_offline": true
+  },
+  "models": [
+    {
+      "name": "rumodernbert_base",
+      "path": "models/rumodernbert_base",
+      "model_type": "modernbert",
+      "pretrained_model": {
+        "name": "deepvk/RuModernBERT-base",
+        "source": "https://huggingface.co/deepvk/RuModernBERT-base",
+        "revision": "8aee6f818db9070b635a549580dc64dcfa03e39a",
+        "license": "Apache-2.0",
+        "license_evidence": {
+          "source": "README.md front matter at the pinned revision",
+          "sha256": "ae1bfc0e6cb83d6b4aacb0546d224ef6b003d86b1bed93a93a2a33c8141724d9"
+        }
+      },
+      "source_archive": {
+        "sha256": "b3a033dae4ddc4b8ec915bcdcb6e106b99503460bd206ba13fa24a731e3d7c03",
+        "bytes": 555936841
+      },
+      "artifacts": [
+        {
+          "path": "models/rumodernbert_base/config.json",
+          "bytes": 3099,
+          "sha256": "290761f6a5450ae24287dcf2de0c1ceeeb74d1161a0d0e34c20a437b5dc071d6"
+        },
+        {
+          "path": "models/rumodernbert_base/model.safetensors",
+          "bytes": 598436708,
+          "sha256": "ddef9d16ad7878ca8b1391c5c7ae9acdce281e58fe137f04a379f87b941848fd"
+        },
+        {
+          "path": "models/rumodernbert_base/tokenizer.json",
+          "bytes": 4752911,
+          "sha256": "e7da3d5de7349d64a59cd8e38741708e5a6f1e11b8c35036e5e5926b599a0f50"
+        },
+        {
+          "path": "models/rumodernbert_base/tokenizer_config.json",
+          "bytes": 617,
+          "sha256": "09fe83cd6391096b9472d2ce1158680c7626be3d83681937404aa359793e9191"
+        }
+      ],
+      "inference": {
+        "serialization_mode": "item_v1",
+        "serialization_version": "item_v1",
+        "max_length": 256,
+        "max_attribute_characters": 2048,
+        "batch_size": 512,
+        "serialization_chunk_size": 8192,
+        "bidirectional": false,
+        "score": "single raw classifier logit",
+        "load_in_bf16": false,
+        "max_length_by_category": {
+          "Мебель": 384,
+          "Обувь": 384,
+          "Одежда": 384
+        }
+      },
+      "training_lineage": [
+        {
+          "manifest_sha256": "fe324e28f8e277cb51bc5b1391eacd145ad7194a043eac310444f6b9610f5f11",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "e21376f668ae4a67fa80803a9841b8a5eceab2601863fe09a9774eb5dcef3937",
+            "available_rows": 9063970,
+            "used_rows": 9063970,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 35794,
+              "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 43118,
+              "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        },
+        {
+          "manifest_sha256": "a36242d880180c474b92375ec745be8109a9627ed85a1e33c4e01b1a8e0b1be3",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "f8c8ab41b7729406e6facfbba41230834c01513bf5eb170add426847c008ac91",
+            "available_rows": 365654,
+            "used_rows": 365654,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 35794,
+              "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 43118,
+              "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        },
+        {
+          "manifest_sha256": "3de04f14008ae83f997af4a10129f757283b13d8e5c468d07bb34b7729f2ab9d",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "f8c8ab41b7729406e6facfbba41230834c01513bf5eb170add426847c008ac91",
+            "available_rows": 365654,
+            "used_rows": 365654,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 40202,
+              "sha256": "34491638063fb8bbc4515f5c6a7cc44b6eb4b281190f59e0b1f377ccc17a7e31"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 45245,
+              "sha256": "c6ed2a244b946348e54c5fd76169d8cf8e636b27961322300fd4fdf12fc60f88"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lamar_600m",
+      "path": "models/lamar_600m",
+      "model_type": "xlm-roberta",
+      "pretrained_model": {
+        "name": "nlpai-lab/LAMAR-600m",
+        "source": "https://huggingface.co/nlpai-lab/LAMAR-600m",
+        "revision": "3af1f97945392da8ef46217640641355928aeb59",
+        "license": "MIT",
+        "license_evidence": {
+          "source": "Pinned README.md card metadata and License section",
+          "url": "https://huggingface.co/nlpai-lab/LAMAR-600m/resolve/3af1f97945392da8ef46217640641355928aeb59/README.md",
+          "sha256": "47008a138bba38c3abbf0adc363234bbfc10f346f057d05dca6284357b6b0fd3"
+        },
+        "upstream_base_model": {
+          "name": "BAAI/bge-m3-retromae",
+          "declared_license": "MIT",
+          "exact_revision_declared_by_candidate": false
+        }
+      },
+      "source_archive": {
+        "sha256": "f5f3f0ac1259ce27e3a43633ffadf6c90d371af7a9ef6d6737a596b96519d88f",
+        "bytes": 2047237301
+      },
+      "artifacts": [
+        {
+          "path": "models/lamar_600m/config.json",
+          "bytes": 939,
+          "sha256": "02d864338363cc3f4b4bafbce74fc07ac2000e707381e4bd40e7db822489973e"
+        },
+        {
+          "path": "models/lamar_600m/model.safetensors",
+          "bytes": 2271071852,
+          "sha256": "f3359ee68e96bfe3d1fc9cd258b0aa00d2c1e113d99065a59190576edbe23761"
+        },
+        {
+          "path": "models/lamar_600m/tokenizer.json",
+          "bytes": 17098335,
+          "sha256": "e35b2e63573ecbff4ff5616dea198cdb4c3112d34d75f0d06a70537de0f0a08b"
+        },
+        {
+          "path": "models/lamar_600m/tokenizer_config.json",
+          "bytes": 597,
+          "sha256": "e8140ba38af5dc1ee0a09295c8f44e68f27c49414e0de56a4e40066756ce6c90"
+        }
+      ],
+      "inference": {
+        "serialization_mode": "item_v1",
+        "serialization_version": "item_v1",
+        "max_length": 256,
+        "max_attribute_characters": 2048,
+        "batch_size": 192,
+        "serialization_chunk_size": 8192,
+        "bidirectional": false,
+        "score": "single raw classifier logit",
+        "load_in_bf16": false
+      },
+      "training_lineage": [
+        {
+          "manifest_sha256": "5fb55c5b4529381318e5784b953c8b42783364acaf154b5e42f1c5186c417115",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "e21376f668ae4a67fa80803a9841b8a5eceab2601863fe09a9774eb5dcef3937",
+            "available_rows": 9063970,
+            "used_rows": 9063970,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 35794,
+              "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 43118,
+              "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        },
+        {
+          "manifest_sha256": "ae0dda5d41423bcb985d58e1b619aa396a0c48da1c55f6a234c0a702c022272e",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "f8c8ab41b7729406e6facfbba41230834c01513bf5eb170add426847c008ac91",
+            "available_rows": 365654,
+            "used_rows": 365654,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 35794,
+              "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 43118,
+              "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "teacher_student",
+      "path": "models/teacher_student",
+      "model_type": "modernbert",
+      "pretrained_model": {
+        "name": "deepvk/RuModernBERT-base",
+        "source": "https://huggingface.co/deepvk/RuModernBERT-base",
+        "revision": "8aee6f818db9070b635a549580dc64dcfa03e39a",
+        "license": "Apache-2.0",
+        "license_evidence": {
+          "source": "README.md front matter at the pinned revision",
+          "sha256": "ae1bfc0e6cb83d6b4aacb0546d224ef6b003d86b1bed93a93a2a33c8141724d9"
+        }
+      },
+      "source_archive": {
+        "sha256": "764b50eb05dd8ba5a0647a00a7bef48d39531a6dd426c643e44c920e100e8524",
+        "bytes": 555935632
+      },
+      "artifacts": [
+        {
+          "path": "models/teacher_student/config.json",
+          "bytes": 3099,
+          "sha256": "290761f6a5450ae24287dcf2de0c1ceeeb74d1161a0d0e34c20a437b5dc071d6"
+        },
+        {
+          "path": "models/teacher_student/model.safetensors",
+          "bytes": 598436708,
+          "sha256": "f1b9e4a9d614912ce6678e0b108e9b09e19827bacbe71ce4a4828a1cf211b1e6"
+        },
+        {
+          "path": "models/teacher_student/tokenizer.json",
+          "bytes": 4752911,
+          "sha256": "e7da3d5de7349d64a59cd8e38741708e5a6f1e11b8c35036e5e5926b599a0f50"
+        },
+        {
+          "path": "models/teacher_student/tokenizer_config.json",
+          "bytes": 617,
+          "sha256": "09fe83cd6391096b9472d2ce1158680c7626be3d83681937404aa359793e9191"
+        }
+      ],
+      "inference": {
+        "serialization_mode": "item_v1",
+        "serialization_version": "item_v1",
+        "max_length": 256,
+        "max_attribute_characters": 2048,
+        "batch_size": 512,
+        "serialization_chunk_size": 8192,
+        "bidirectional": false,
+        "score": "single raw classifier logit",
+        "load_in_bf16": false
+      },
+      "training_lineage": [
+        {
+          "manifest_sha256": "fe324e28f8e277cb51bc5b1391eacd145ad7194a043eac310444f6b9610f5f11",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "e21376f668ae4a67fa80803a9841b8a5eceab2601863fe09a9774eb5dcef3937",
+            "available_rows": 9063970,
+            "used_rows": 9063970,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "replay": null,
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 35794,
+              "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 43118,
+              "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        },
+        {
+          "manifest_sha256": "a36242d880180c474b92375ec745be8109a9627ed85a1e33c4e01b1a8e0b1be3",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "f8c8ab41b7729406e6facfbba41230834c01513bf5eb170add426847c008ac91",
+            "available_rows": 365654,
+            "used_rows": 365654,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "replay": null,
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 35794,
+              "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 43118,
+              "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        },
+        {
+          "manifest_sha256": "20cc253fcd765a6796b937f38f99c2263b28eef29cd88a8aefd0793fd346d99d",
+          "best_epoch": 1,
+          "checkpoint_selection": "last_epoch",
+          "serializer": {
+            "mode": "item_v1",
+            "version": "item_v1",
+            "max_length": 256,
+            "max_attribute_characters": 2048
+          },
+          "objective": {
+            "loss_mode": "row_mean",
+            "confidence_gamma": 0.0,
+            "hard_replay_fraction": 0.0
+          },
+          "seed": 2026,
+          "train": {
+            "sha256": "f8c8ab41b7729406e6facfbba41230834c01513bf5eb170add426847c008ac91",
+            "available_rows": 365654,
+            "used_rows": 365654,
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "replay": {
+            "sha256": "567d3b85cb44579decbb9372df402e30fa5e786496eddd494cbd1f3ac9ebbfb8",
+            "available_rows": 78000,
+            "planned_rows_per_epoch": 76178,
+            "used_rows": 76178,
+            "fraction": 0.175
+          },
+          "validation": {
+            "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d",
+            "kind": "llm",
+            "include_fold": null,
+            "exclude_fold": null,
+            "include_inner_fold": null,
+            "exclude_inner_fold": null
+          },
+          "training_code": [
+            {
+              "path": "scripts/train_neural_matcher.py",
+              "bytes": 40202,
+              "sha256": "34491638063fb8bbc4515f5c6a7cc44b6eb4b281190f59e0b1f377ccc17a7e31"
+            },
+            {
+              "path": "src/ecup_matching/neural_training.py",
+              "bytes": 45245,
+              "sha256": "c6ed2a244b946348e54c5fd76169d8cf8e636b27961322300fd4fdf12fc60f88"
+            },
+            {
+              "path": "src/ecup_matching/serialization.py",
+              "bytes": 14883,
+              "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+            },
+            {
+              "path": "src/ecup_matching/metrics.py",
+              "bytes": 2976,
+              "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+            },
+            {
+              "path": "src/ecup_matching/llm_diagnostics.py",
+              "bytes": 2513,
+              "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ensemble": {
+    "feature_order": [
+      "rumodernbert_base",
+      "lamar_600m"
+    ],
+    "representation": "raw_logit",
+    "scope": "category",
+    "weights": {
+      "Автотовары": [
+        1.0,
+        0.0
+      ],
+      "Аптека": [
+        0.5,
+        0.5
+      ],
+      "Бытовая техника": [
+        0.5,
+        0.5
+      ],
+      "Бытовая химия": [
+        0.5,
+        0.5
+      ],
+      "Галантерея и аксессуары": [
+        0.5,
+        0.5
+      ],
+      "Детские товары": [
+        1.0,
+        0.0
+      ],
+      "Дом и сад": [
+        0.5,
+        0.5
+      ],
+      "Канцелярские товары": [
+        0.5,
+        0.5
+      ],
+      "Красота и гигиена": [
+        0.5,
+        0.5
+      ],
+      "Мебель": [
+        0.5,
+        0.5
+      ],
+      "Музыкальные инструменты": [
+        0.5,
+        0.5
+      ],
+      "Обувь": [
+        0.5,
+        0.5
+      ],
+      "Одежда": [
+        0.5,
+        0.5
+      ],
+      "Продукты питания": [
+        0.5,
+        0.5
+      ],
+      "Спорт и отдых": [
+        0.5,
+        0.5
+      ],
+      "Строительство и ремонт": [
+        0.5,
+        0.5
+      ],
+      "Товары для животных": [
+        0.5,
+        0.5
+      ],
+      "Хобби и творчество": [
+        0.5,
+        0.5
+      ],
+      "Электроника": [
+        0.5,
+        0.5
+      ],
+      "Ювелирные изделия": [
+        1.0,
+        0.0
+      ]
+    }
+  },
+  "residual": {
+    "model_name": "teacher_student",
+    "representation": "category_rank",
+    "scope": "category_subset",
+    "categories": [
+      "Ювелирные изделия"
+    ],
+    "reference_weight": 0.75,
+    "model_weight": 0.25
+  },
+  "router_quality_source": {
+    "report_sha256": "88bce6e1638e5f297c40a0f213c9a6382e71c4c8f6604e522510a371768249ba",
+    "method": "rumodernbert_base+lamar_600m__raw_logit__top_17_category_router",
+    "selected_categories": [
+      "Одежда",
+      "Обувь",
+      "Электроника",
+      "Строительство и ремонт",
+      "Галантерея и аксессуары",
+      "Мебель",
+      "Спорт и отдых",
+      "Дом и сад",
+      "Бытовая техника",
+      "Канцелярские товары",
+      "Аптека",
+      "Продукты питания",
+      "Красота и гигиена",
+      "Музыкальные инструменты",
+      "Товары для животных",
+      "Бытовая химия",
+      "Хобби и творчество"
+    ],
+    "local_oof": 0.8025451773142886,
+    "uplift_vs_base": 0.007906977462236897
+  },
+  "length_router_quality_source": {
+    "report_sha256": "0b415777dd23be5989773fdca9206865f6e0960b2f4175bf3fb88055873f3d00",
+    "default_max_length": 256,
+    "routed_max_length": 384,
+    "selected_categories": [
+      "Мебель",
+      "Обувь",
+      "Одежда"
+    ],
+    "local_oof": 0.8041819050090279,
+    "uplift_vs_k16": 0.001636727694739215,
+    "positive_folds": 5
+  },
+  "residual_quality_source": {
+    "contract_sha256": "8f886df18d9b0adcaa60f4ffd9d32ac36eb7b9f3222ab939a442653c5328d771",
+    "report_sha256": "d29747df074034928a6699b83bb91c6232fa12fef07f1cffc314a5fce34e2c83",
+    "local_oof": 0.8044056080433284,
+    "uplift_vs_k17": 0.0002237030343005264,
+    "positive_folds": 5,
+    "label_teacher": {
+      "name": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "license": "Apache-2.0",
+      "not_shipped": true,
+      "selection_report_sha256": "2921ce3f2dc71e1495d5b10af9b0c50d120c0627a16504171fca05a75d6a6653",
+      "license_evidence": {
+        "readme_sha256": "c5f5a8c2dddab69cfbf05279235aa5fddb137939a06539c4c7637aa900fef6d0",
+        "license_sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 2,
+  "artifacts": {
+    "matches.parquet": {"role": "organizer_human_pairs", "rows": 365654, "sha256": "14b0e07f750204807aff0bb7510d385a0b3fae3f02088506a14242187ca1e492"},
+    "matches_llm.parquet": {"role": "organizer_soft_pairs", "rows": 11187780, "sha256": "dc7802dbfb36afd134cff8d449b93f602a0bb7da26f755685dd1dbbe40f8b24d"},
+    "items.parquet": {"role": "organizer_full_items", "rows": 13397761, "sha256": "4dbc6ca200f842db0579f0eaaec0662df07721df96d975552c0f18134c51f0a8"},
+    "items_human.parquet": {"role": "organizer_human_items", "rows": 711304, "sha256": "07d4f09ac8cfa90a2dfc2a7802dec09fc1e188576e1281e781aa1340b3336f4a"},
+    "data_derived/splits/human_folds.parquet": {"role": "item_disjoint_human_folds", "rows": 365654, "sha256": "3d74d4d86071dd842e6c02dca6cd983e379aa488ad8846d2f77069bbc7fd9f63"},
+    "data_derived/neural/pairs_full_v1/llm_train.parquet": {"role": "item_disjoint_llm_train", "rows": 9063970, "sha256": "e21376f668ae4a67fa80803a9841b8a5eceab2601863fe09a9774eb5dcef3937"},
+    "data_derived/neural/pairs_full_v1/llm_validation.parquet": {"role": "frozen_llm_holdout", "rows": 111404, "sha256": "df34724efa85e690ccda1e5c45e95275af00b9af6a08baff1b710bd499ea850d"},
+    "data_derived/neural/pairs_full_v1/human_all.parquet": {"role": "joined_human_pairs", "rows": 365654, "sha256": "30a0aab355b6fc11ca7af399bb52687464bdbe24ad44c04033c7f8905cb38f57"},
+    "data_derived/neural/pairs_v2/human_all_nested.parquet": {"role": "nested_item_disjoint_human_pairs", "rows": 365654, "sha256": "f8c8ab41b7729406e6facfbba41230834c01513bf5eb170add426847c008ac91"},
+    "data_derived/neural/teacher_hard_distillation_v1/replay_calibrated_w100_78k.parquet": {"role": "teacher_corrected_replay", "rows": 78000, "sha256": "567d3b85cb44579decbb9372df402e30fa5e786496eddd494cbd1f3ac9ebbfb8"}
+  },
+  "groups": {
+    "raw_inputs": ["matches.parquet", "matches_llm.parquet", "items.parquet", "items_human.parquet"],
+    "core_training_inputs": ["data_derived/splits/human_folds.parquet", "data_derived/neural/pairs_full_v1/llm_train.parquet", "data_derived/neural/pairs_full_v1/llm_validation.parquet", "data_derived/neural/pairs_full_v1/human_all.parquet", "data_derived/neural/pairs_v2/human_all_nested.parquet"],
+    "teacher_training_input": ["data_derived/neural/teacher_hard_distillation_v1/replay_calibrated_w100_78k.parquet"]
+  },
+  "split_contract": {
+    "outer_folds": 5,
+    "outer_seed": 2026,
+    "inner_folds": 5,
+    "inner_validation_fold": 0,
+    "inner_seed": 2027,
+    "unit": "connected product component",
+    "item_disjoint": true
+  },
+  "llm_split_contract": {
+    "validation_modulus": 10,
+    "train_sample_modulus": 1,
+    "sample_seed": 2026,
+    "frozen_holdout_is_training_excluded": true
+  }
+}

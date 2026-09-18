@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "selected_releases": [
+    {
+      "profile": "full_postblend_h100_v1",
+      "archive": "ECUP2026_task1_final_full_postblend_h100_v1.zip",
+      "bytes": 3159072976,
+      "sha256": "bac701732a04c6b74f5dbbcb0d4fe969a7c80aacc0255a5c3b47f7d02b5095e5",
+      "public_macro_average_precision": 0.5255360829539653,
+      "runtime_manifest_sha256": "78e2cb653eaf515bce9efe6b4b3457fcae114268b9988e26df6066e291ecf66a"
+    },
+    {
+      "profile": "teacher_distilled_k17_v1",
+      "archive": "ECUP2026_task1_teacher_distilled_k17_v1.zip",
+      "bytes": 3158831062,
+      "sha256": "b64772a5e39f1515c78a396ffc684f2339cb4bd85a5ec0e62d70fa9810f16ff2",
+      "public_macro_average_precision": 0.5237971759576601,
+      "runtime_manifest_sha256": "cdb0b56443b3efbc5f0c747b564069b2719536b90e9b53eb17d6c60c67cb243e"
+    }
+  ],
+  "private_result": {
+    "rank": 14,
+    "macro_average_precision": 0.5265024073,
+    "scope": "team result from the two selected final releases"
+  }
+}

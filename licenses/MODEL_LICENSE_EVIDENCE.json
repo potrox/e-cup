@@ -1,0 +1,37 @@
+{
+  "models": [
+    {
+      "license": "Apache-2.0",
+      "model": "deepvk/RuModernBERT-base",
+      "model_card_bytes": 8109,
+      "model_card_license_declaration": "license: apache-2.0",
+      "model_card_sha256": "ae1bfc0e6cb83d6b4aacb0546d224ef6b003d86b1bed93a93a2a33c8141724d9",
+      "parameter_scale": "150M",
+      "revision": "8aee6f818db9070b635a549580dc64dcfa03e39a",
+      "standard_license_text": "licenses/Apache-2.0.txt"
+    },
+    {
+      "license": "MIT",
+      "model": "nlpai-lab/LAMAR-600m",
+      "model_card_bytes": 14519,
+      "model_card_license_declaration": "license: mit",
+      "model_card_sha256": "47008a138bba38c3abbf0adc363234bbfc10f346f057d05dca6284357b6b0fd3",
+      "parameter_scale": "600M",
+      "revision": "3af1f97945392da8ef46217640641355928aeb59",
+      "standard_license_text": "licenses/MIT.txt"
+    },
+    {
+      "license": "Apache-2.0",
+      "license_file_bytes": 11544,
+      "license_file_sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+      "model": "Qwen/Qwen3.5-9B",
+      "model_card_bytes": 77643,
+      "model_card_license_declaration": "license: apache-2.0",
+      "model_card_sha256": "c5f5a8c2dddab69cfbf05279235aa5fddb137939a06539c4c7637aa900fef6d0",
+      "parameter_scale": "9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "standard_license_text": "licenses/Apache-2.0.txt"
+    }
+  ],
+  "schema_version": 1
+}

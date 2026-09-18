@@ -1,0 +1,17 @@
+{
+  "categories": 20,
+  "gates": {
+    "max_mean_probability_delta": 0.005,
+    "min_sign_agreement": 0.99,
+    "min_spearman": 0.999
+  },
+  "metrics": {
+    "max_absolute_probability_delta": 0.04097679257392883,
+    "mean_absolute_probability_delta": 0.0033150920644402504,
+    "sign_agreement": 0.9955,
+    "spearman_logit": 0.9996454032846221
+  },
+  "rows": 2000,
+  "schema_version": 1,
+  "status": "pass"
+}

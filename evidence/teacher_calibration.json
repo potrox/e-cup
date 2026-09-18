@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "chosen": "category_platt",
+  "unlisted_categories_use_raw_probability": true,
+  "category_parameters": {
+    "Обувь": {"coefficient": 0.4603071555408009, "intercept": -0.7099478142323564},
+    "Одежда": {"coefficient": 0.5132636976833249, "intercept": -0.36602099641571845},
+    "Ювелирные изделия": {"coefficient": 0.17764369048170162, "intercept": -1.6946574397257212}
+  },
+  "source_fit_rows": 6000,
+  "source_validation_rows": 2000,
+  "frozen_output_sha256": "c775d239ee33f988695370d65375309d802c3c617d7193c2cc58ecd85b442612"
+}

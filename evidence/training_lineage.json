@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "python": "3.12",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.15.1",
+    "tokenizers": "0.22.2",
+    "pyarrow": "23.0.1",
+    "numpy": "2.5.2",
+    "scikit_learn": "1.9.0"
+  },
+  "stages": [
+    {"name": "rumodernbert_llm", "config": "configs/training/rumodernbert_llm.json", "historical_manifest_sha256": "fe324e28f8e277cb51bc5b1391eacd145ad7194a043eac310444f6b9610f5f11", "selection_metric": 0.7900916792170058, "seconds": 22247.668712500017},
+    {"name": "rumodernbert_human_gold", "config": "configs/training/rumodernbert_human_gold.json", "historical_manifest_sha256": "a36242d880180c474b92375ec745be8109a9627ed85a1e33c4e01b1a8e0b1be3", "selection_metric": 0.6916347989736573, "seconds": 1052.1432784999924},
+    {"name": "rumodernbert_gold_consolidation", "config": "configs/training/rumodernbert_gold_consolidation.json", "historical_manifest_sha256": "3de04f14008ae83f997af4a10129f757283b13d8e5c468d07bb34b7729f2ab9d", "selection_metric": 0.6903574946365179, "seconds": 1046.1867335999996},
+    {"name": "lamar_llm", "config": "configs/training/lamar_llm.json", "historical_manifest_sha256": "5fb55c5b4529381318e5784b953c8b42783364acaf154b5e42f1c5186c417115", "selection_metric": 0.7847889223043183, "seconds": 37992.39520419999},
+    {"name": "lamar_human_gold", "config": "configs/training/lamar_human_gold.json", "historical_manifest_sha256": "ae0dda5d41423bcb985d58e1b619aa396a0c48da1c55f6a234c0a702c022272e", "selection_metric": 0.6878369928297707, "seconds": 1720.1461030000064},
+    {"name": "teacher_student_replay", "config": "configs/training/teacher_student_replay.json", "historical_manifest_sha256": "20cc253fcd765a6796b937f38f99c2263b28eef29cd88a8aefd0793fd346d99d", "selection_metric": 0.7059284967550509, "seconds": 1208.039830200003}
+  ],
+  "metric_note": "Stage selection metrics above are training diagnostics on the configured LLM holdout; official human OOF selection evidence is stored separately."
+}

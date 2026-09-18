@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "key": "rumodernbert_base",
+      "name": "deepvk/RuModernBERT-base",
+      "revision": "8aee6f818db9070b635a549580dc64dcfa03e39a",
+      "local_path": "models/pretrained/rumodernbert_base",
+      "license": "Apache-2.0"
+    },
+    {
+      "key": "lamar_600m",
+      "name": "nlpai-lab/LAMAR-600m",
+      "revision": "3af1f97945392da8ef46217640641355928aeb59",
+      "local_path": "models/pretrained/lamar_600m",
+      "license": "MIT"
+    },
+    {
+      "key": "qwen35_9b_teacher",
+      "name": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "local_path": "models/pretrained/qwen35_9b",
+      "license": "Apache-2.0",
+      "training_only": true
+    }
+  ]
+}

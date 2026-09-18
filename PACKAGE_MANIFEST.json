@@ -1,0 +1,772 @@
+{
+  "excluded": [
+    "organizer source data",
+    "predictions",
+    "experiment logs",
+    "local caches",
+    "personal documents",
+    "version-control state"
+  ],
+  "file_count_without_manifest": 125,
+  "files": [
+    {
+      "binary_artifact": false,
+      "bytes": 137,
+      "path": ".gitattributes",
+      "sha256": "268458f092deea06424135edcdf7a2faec6752be39474b73cd7e544ca66e9cc1"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1660,
+      "path": "DATA_AND_ARTIFACTS.md",
+      "sha256": "8051c7059dab488c0a3081dcb35b6e83e1f0769ad4edeefcc56c66e7e83b3317"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1080,
+      "path": "PROVENANCE.md",
+      "sha256": "b3d99c222de113d34f65d10f33e2320d630abc187c963a519d5b0b1fda7a1871"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3352,
+      "path": "README.md",
+      "sha256": "322cf043edfa58adb1c702b1f52df19be7236e0c74a6d6d5220cafab729aa970"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 5173,
+      "path": "REPRODUCIBILITY.md",
+      "sha256": "e91522dcff42eb3e5d14ea66d7b4e7d18f7aa77acbc0a8a8f851ea567d5babef"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1130,
+      "path": "REVIEW_COMPLIANCE.md",
+      "sha256": "a3fd4761aa2fb91fe868937edc3c5532c1013c695190c971ee1a6f55a8602405"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 995,
+      "path": "SELECTED_RELEASES.json",
+      "sha256": "bc3f5f63c5d5e2d4578971251484fec2b7f6b3f5b9782cf0f2eb0b3e65132134"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1689,
+      "path": "THIRD_PARTY.md",
+      "sha256": "0560ade205b65349a0278a097dd23a724fb27c59e4794c7a83293945f041e9a4"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3939,
+      "path": "artifacts/llm_labels/ARTIFACT_MANIFEST.json",
+      "sha256": "35f16947e5b9ea7927b12cdad757966ff9e54e57044f5b73191e4d17c6ec1c8a"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 31275822,
+      "path": "artifacts/llm_labels/replay_calibrated_w100_78k.parquet",
+      "sha256": "567d3b85cb44579decbb9372df402e30fa5e786496eddd494cbd1f3ac9ebbfb8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 483,
+      "path": "artifacts/llm_labels/teacher_repro_sample_2000.manifest.json",
+      "sha256": "f864622d415e5aded9159712dfc9f8be29858e25d9738f04a0af39c1e87cdb77"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 766469,
+      "path": "artifacts/llm_labels/teacher_repro_sample_2000.parquet",
+      "sha256": "ba316e8e3f520f5a0cdda7b1853d8f1a74e5f703ba5cc76c12d8a72ee14618d0"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 29751926,
+      "path": "artifacts/llm_labels/teacher_scored_80k_qwen35_9b.parquet",
+      "sha256": "cd147efe530bbe04e560533d02aac018a0d9884ba53493d6ec4a6e303e6e1ddc"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 30327857,
+      "path": "artifacts/llm_labels/teacher_scored_80k_qwen35_9b_calibrated.parquet",
+      "sha256": "c775d239ee33f988695370d65375309d802c3c617d7193c2cc58ecd85b442612"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2373,
+      "path": "artifacts/trained_models/ARTIFACT_MANIFEST.json",
+      "sha256": "df6d770f248a6dcef9c23380ee06b4674bc31165f5b3d2614a9f32172743e78b"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 536870912,
+      "path": "artifacts/trained_models/ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0001-of-0006",
+      "sha256": "e383926b29646587e4c274a8843fe3c45142409d483f8c0ea840e49b760904da"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 536870912,
+      "path": "artifacts/trained_models/ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0002-of-0006",
+      "sha256": "822ccd0eee7ba3c784c1555882b751a80b5f273838845bbfa91d7a2839f2d6ca"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 536870912,
+      "path": "artifacts/trained_models/ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0003-of-0006",
+      "sha256": "bd004be9697da29a707d76e218492b359b02d0f5ae618576f6d4ccfa1bf9fafd"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 536870912,
+      "path": "artifacts/trained_models/ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0004-of-0006",
+      "sha256": "7694d60d6a6ece7ebc8b3a8f345b1d1e0450da8460b5eccc623ad1638a5e7d57"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 536870912,
+      "path": "artifacts/trained_models/ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0005-of-0006",
+      "sha256": "b2a95b23784cbb36542abe3c0d1048f8c0c2678650d38a7ad704c08958bf4d2a"
+    },
+    {
+      "binary_artifact": true,
+      "bytes": 474718416,
+      "path": "artifacts/trained_models/ECUP2026_task1_final_full_postblend_h100_v1.zip.part-0006-of-0006",
+      "sha256": "c3a3dc06a3795f33967e0f35882fbf1ba3e8b8f353fbc55340efb7a3dc22a256"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 10640,
+      "path": "configs/pipeline.json",
+      "sha256": "3032ec142079b928bafb945ab6c5db4b02d987a16f33b98900853f4f5b5de4fa"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 751,
+      "path": "configs/pretrained_models.json",
+      "sha256": "e38b2a6ac3f97305da2a25c53b3b34e110b5a9d4f4caa33b6e81c8dd577b5a1f"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2024,
+      "path": "configs/runtime/lamar_600m.json",
+      "sha256": "1563f580b9710e1bcfdbd35791f4d6fc0ded07ff2f9d203166c63029dbf27cdb"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2258,
+      "path": "configs/runtime/rumodernbert_base.json",
+      "sha256": "292ead19e04dd98e8751cdab3dd0c51022017bc6c73379a53e4fa4fefecb011e"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2234,
+      "path": "configs/training/lamar_human_gold.json",
+      "sha256": "c6199bde5fb64639cac1917e9d91bf6f194084e615d32cf172842ec84c03ad15"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2320,
+      "path": "configs/training/lamar_llm.json",
+      "sha256": "6c6fb026a65b793682381e0f3d01b518596cb2943b9828dacd557a1335e4f7c3"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2087,
+      "path": "configs/training/rumodernbert_gold_consolidation.json",
+      "sha256": "70a967fefac6c6e2b439f8825b1630dbf9d22628ffdf2297b67f28fd87c94d6a"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2249,
+      "path": "configs/training/rumodernbert_human_gold.json",
+      "sha256": "20d94ca97728c1f2af361ce23830f4871fddac5cdaa1d5174316537f8701358e"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2339,
+      "path": "configs/training/rumodernbert_llm.json",
+      "sha256": "ccd5978d8120b2079f809f980ad8b6c52e6cd6905260b47d1d5f423e1770c897"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2452,
+      "path": "configs/training/teacher_student_replay.json",
+      "sha256": "7b72251683280f783b43c5339c85abbbd5bb3cfe9cd10b4ddcda6a13460364ad"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2756,
+      "path": "evidence/data_lineage.json",
+      "sha256": "82b72fe8e2153b6071887810ed0d902ce5836cf2176bb2a450583cdda57aba5e"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1517,
+      "path": "evidence/selection_evidence.json",
+      "sha256": "4de8e03d7e0d6168abd26d9369772e0b42581112f53fff4266008fadbdeb7c8d"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 587,
+      "path": "evidence/teacher_calibration.json",
+      "sha256": "9f8bd8dc955102244c135c90c581546a3f1bf947006f86d50073df434caf2e19"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 411,
+      "path": "evidence/teacher_repro_sample_verification.json",
+      "sha256": "8bb7ce73989517b63931c81593254f7b994b5e3dbb91f18a999879e0d481f65a"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2026,
+      "path": "evidence/training_lineage.json",
+      "sha256": "a2003f636dac2e6ed7d4add3ce2f8b54eaa04f84eafbec06f58e01086b72f1e2"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 11544,
+      "path": "licenses/Apache-2.0.txt",
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1077,
+      "path": "licenses/MIT.txt",
+      "sha256": "c3b1b78bc8bd3ea13aa4bc9778442d16560270afa235006d816e5e88cef24db4"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1429,
+      "path": "licenses/MODEL_LICENSE_EVIDENCE.json",
+      "sha256": "32e3ad58676e54922b614d6befc9a76b459db63ad91a1f7ae7d192667340c2d0"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1105,
+      "path": "pyproject.toml",
+      "sha256": "1ab67fb3ef7aeea47a827105674f916a1cbf548db0bbb03e9604bcf221f47495"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2605,
+      "path": "release_profiles/full_postblend_h100_v1/RUNTIME_DEPENDENCIES.json",
+      "sha256": "9aa3542b5de0b0321dd7274583e20a34ff8cfaa738d3f08c70b918c76f83b1d6"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 63,
+      "path": "release_profiles/full_postblend_h100_v1/ecup_matching/__init__.py",
+      "sha256": "ebed644ea69569bf4ee07cb1d111579ea15f32733a1a1ec27db1ddf332f5b70c"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 25157,
+      "path": "release_profiles/full_postblend_h100_v1/ecup_matching/ensemble_inference.py",
+      "sha256": "86e8207085a997dd0d9be0bd1998d2251f52e2ac8dea24c65a018c5870a14cd8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 17561,
+      "path": "release_profiles/full_postblend_h100_v1/ecup_matching/neural_inference.py",
+      "sha256": "17e50b8b09ad7f11c979279e83997b4fcee76feb17d992a956e50d00bf4f59a8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 14883,
+      "path": "release_profiles/full_postblend_h100_v1/ecup_matching/serialization.py",
+      "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 31618,
+      "path": "release_profiles/full_postblend_h100_v1/ensemble_manifest.json",
+      "sha256": "78e2cb653eaf515bce9efe6b4b3457fcae114268b9988e26df6066e291ecf66a"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 93,
+      "path": "release_profiles/full_postblend_h100_v1/metadata.json",
+      "sha256": "d266f35859adf5f5d7e25d7f67e36d6b9d05a7aa7dcc748b22c22df1261a102d"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 409,
+      "path": "release_profiles/full_postblend_h100_v1/run.py",
+      "sha256": "f60d77c3ad199f57f22ec01014923ff7d821e4197e7fa6cf8ccf0720dadf84f8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2605,
+      "path": "release_profiles/teacher_distilled_k17_v1/RUNTIME_DEPENDENCIES.json",
+      "sha256": "9aa3542b5de0b0321dd7274583e20a34ff8cfaa738d3f08c70b918c76f83b1d6"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 63,
+      "path": "release_profiles/teacher_distilled_k17_v1/ecup_matching/__init__.py",
+      "sha256": "ebed644ea69569bf4ee07cb1d111579ea15f32733a1a1ec27db1ddf332f5b70c"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 21285,
+      "path": "release_profiles/teacher_distilled_k17_v1/ecup_matching/ensemble_inference.py",
+      "sha256": "c2f12c6c3e6c43dae60ca85500e88152b2e7b4680310961a6c5b25bf0e745f30"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 16371,
+      "path": "release_profiles/teacher_distilled_k17_v1/ecup_matching/neural_inference.py",
+      "sha256": "d22b26235f4a6bd5277ea60d4bc45bd33be9ce656589da9ebcef8d03e31e1449"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 14883,
+      "path": "release_profiles/teacher_distilled_k17_v1/ecup_matching/serialization.py",
+      "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 29866,
+      "path": "release_profiles/teacher_distilled_k17_v1/ensemble_manifest.json",
+      "sha256": "cdb0b56443b3efbc5f0c747b564069b2719536b90e9b53eb17d6c60c67cb243e"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 93,
+      "path": "release_profiles/teacher_distilled_k17_v1/metadata.json",
+      "sha256": "d266f35859adf5f5d7e25d7f67e36d6b9d05a7aa7dcc748b22c22df1261a102d"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 409,
+      "path": "release_profiles/teacher_distilled_k17_v1/run.py",
+      "sha256": "f60d77c3ad199f57f22ec01014923ff7d821e4197e7fa6cf8ccf0720dadf84f8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 5333,
+      "path": "requirements.lock.txt",
+      "sha256": "aed821c016add34655cd3f60593ae0df1d680c95ef7f9e17b46c7e9e581e5077"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 6242,
+      "path": "scripts/aggregate_neural_cv.py",
+      "sha256": "63b32dbe63ceb5ab14162c985ef5f6957a90c0fa4c6a045ccab629b7259c5d37"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3046,
+      "path": "scripts/apply_frozen_teacher_calibration.py",
+      "sha256": "c40ad3ecca0e64708121f8b857dd8676083b0facec6735af81bfbe7629d23c11"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 12502,
+      "path": "scripts/build_frozen_ensemble_submission.py",
+      "sha256": "5129c53ab1c653d693c429cd73d42e82f4991c862f1e9254ab2fa5ef6e19043c"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 29810,
+      "path": "scripts/build_neural_ensemble_submission.py",
+      "sha256": "64517978a6b37b6e28a1a79b2bf64761aff84c6eb3cd7210bd490d2d2dbcd420"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 20593,
+      "path": "scripts/build_neural_submission.py",
+      "sha256": "47cf7e9e9f5ffef0252cf1d17005ebda6a5c90761414f889d213111454297b75"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 9040,
+      "path": "scripts/build_submission.py",
+      "sha256": "b5897214d1eff96238ad6ba5503601a39342c9991ba4c18451b35e3f0e95a773"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 9451,
+      "path": "scripts/calibrate_teacher_probabilities.py",
+      "sha256": "7142d7beb3faa1a336befabdde2abe67a6e62a91e8a453eb5b5e054e1f64a09c"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 5514,
+      "path": "scripts/combine_teacher_shards.py",
+      "sha256": "f73c27991f8e4ceb3e4cfba9c99b063172ff8742d954de4e74f9aa22b70dc743"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 6770,
+      "path": "scripts/evaluate_k16_length_router.py",
+      "sha256": "9b7ee7fcef172cb2026730bc7e97c842b66cf2a8f933ae4a5171ff6ade9e8485"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2378,
+      "path": "scripts/evaluate_neural_ensemble.py",
+      "sha256": "04d0e167df459e09c4653dfa63d7a832f1db4cafb4a9afdf07825d6dafc8f401"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 7039,
+      "path": "scripts/evaluate_neural_matcher.py",
+      "sha256": "5670b2528e2b4df6b3c06168b9f8ef1a6e5797dd0569b9fe00abb24b51f0b1a8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2897,
+      "path": "scripts/evaluate_release_ensembles.py",
+      "sha256": "222194d0240fe84873f26dfc14492acf8ad6f27ba4957e719af1c73e2a8621ec"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 11034,
+      "path": "scripts/evaluate_teacher_distilled_k17_router.py",
+      "sha256": "4abc2fa14ab0bca99cb722d8b3d82ac8911f51f046214131cbd860a40aa34386"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1821,
+      "path": "scripts/extract_runtime_vendor.py",
+      "sha256": "dc9706d3eae2a1001fa7ecaa1b5bf9b34a9d6681f6f89c4dfced276831f5260d"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1486,
+      "path": "scripts/fetch_pretrained_models.py",
+      "sha256": "d5595699b08679eabb9609a3428e1eec04a687811caaddea07bbe4ae90986a00"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 6357,
+      "path": "scripts/make_nested_human_pairs.py",
+      "sha256": "1642de1f5f8ccd2b808f1f419a1368db06f2e2f9363c84d6f8c4b5cdf830fcf9"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 4166,
+      "path": "scripts/make_splits.py",
+      "sha256": "15a0d1b28377061534072d6e8213d34cfe0fea685b911ab52b740fdad7ce3b56"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3525,
+      "path": "scripts/make_teacher_repro_sample.py",
+      "sha256": "ce15493a6ca148852f35779b3dab67215352fb1ba6dc84318bbc9f04f453556e"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 5154,
+      "path": "scripts/materialize_neural_oof.py",
+      "sha256": "2f81a9cc977be80c4d6652aa375349b2044543a740a8c12ebcfb987749d11001"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 8162,
+      "path": "scripts/materialize_teacher_candidate_pool.py",
+      "sha256": "b7bf900139e09087328bc214ff58e6d25f6eb3b81021fb4fc7972cf22719f877"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 7711,
+      "path": "scripts/materialize_teacher_corrected_replay.py",
+      "sha256": "93cf26ac5f27d5b3ed9e58a4029ee594f30e720ef7aa2064865c74b4b4379eb9"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2118,
+      "path": "scripts/prepare_neural_pairs.py",
+      "sha256": "595c135d42b3b170ba2593979dee4823e737720d4681359f23395600eb86104f"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3368,
+      "path": "scripts/reassemble_review_artifact.py",
+      "sha256": "eb30d406dd27995a89404a9f402c2fec98f489a84447c9e3861c8baced945e2d"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 5260,
+      "path": "scripts/run_neural_cv.py",
+      "sha256": "ed73b0cb1f89211b161aa84bee874e3c92d264d6e8f86e224acc2b38aeaf0181"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2964,
+      "path": "scripts/run_reproduction_pipeline.py",
+      "sha256": "fc07d4ee41b7ebed7350c2bf3fe724843a65b7e7994c2f4b09c71c989df78269"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 7132,
+      "path": "scripts/run_training_config.py",
+      "sha256": "2bc6e2cd8bd69e83340c89ad7233a01205b1bffc15f214a1dfa3b3b20463d7e4"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 15646,
+      "path": "scripts/score_causal_teacher.py",
+      "sha256": "8c4cf61f8ac4c867ec7d35539d342c70910e809691a58b59e449f9bebd242797"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 8781,
+      "path": "scripts/select_teacher_scoring_subset.py",
+      "sha256": "e1390d5be67cc98c6334cc9a6535cfc7c3fc390e4ac29d1f5b60a8f27b3f341f"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 40202,
+      "path": "scripts/train_neural_matcher.py",
+      "sha256": "34491638063fb8bbc4515f5c6a7cc44b6eb4b281190f59e0b1f377ccc17a7e31"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 34626,
+      "path": "scripts/validate_neural_ensemble_release.py",
+      "sha256": "66a0eaf2f48a2a3881a8022c53eb1b7854c4c7d3d33bbe38073b82e5def1019f"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2363,
+      "path": "scripts/verify_data_lineage.py",
+      "sha256": "505e8df5a43a92d93bbcacbbbdc2db5b06eb99729646e88fe67c41988cbf47eb"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3933,
+      "path": "scripts/verify_review_artifacts.py",
+      "sha256": "e83158df840b8232a4a2e7eade9874fd83bf9a87dcd015243c2035b07c6b85e2"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3890,
+      "path": "scripts/verify_selected_release.py",
+      "sha256": "b83dbe869652ee1cd9d4647aee795c32310bc2600cb2cbbbe31fc01ca5ccd41d"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3951,
+      "path": "scripts/verify_teacher_repro_sample.py",
+      "sha256": "ad22d6bec75b09af9ce5fdf5b6beb36395c25cf044f53057f7d6b12b6139acb0"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 35794,
+      "path": "source_profiles/base_lamar_v1/scripts/train_neural_matcher.py",
+      "sha256": "54005bbb15b8f86ebcac64715dc47960db8869969f3b591215befa125b2388f5"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 201,
+      "path": "source_profiles/base_lamar_v1/src/ecup_matching/__init__.py",
+      "sha256": "5c800a6b0a2d49619306170332902df86686a63823a6aa0c2c0b23c2716717cb"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2513,
+      "path": "source_profiles/base_lamar_v1/src/ecup_matching/llm_diagnostics.py",
+      "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2976,
+      "path": "source_profiles/base_lamar_v1/src/ecup_matching/metrics.py",
+      "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 43118,
+      "path": "source_profiles/base_lamar_v1/src/ecup_matching/neural_training.py",
+      "sha256": "5140b6101597db04861fc85526f79e2cdae3a400868fd1edc511fcfb52de8fcd"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 14883,
+      "path": "source_profiles/base_lamar_v1/src/ecup_matching/serialization.py",
+      "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 201,
+      "path": "src/ecup_matching/__init__.py",
+      "sha256": "5c800a6b0a2d49619306170332902df86686a63823a6aa0c2c0b23c2716717cb"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 11007,
+      "path": "src/ecup_matching/blending.py",
+      "sha256": "652ba129354a12ea7e6d003eae4b876c65c3ebce59814a686ce34f19385604ca"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 25487,
+      "path": "src/ecup_matching/ensemble_inference.py",
+      "sha256": "34b2f5264d1e3bfd9960ceb12a913992ce1619a0c9c335b0d91a6445846691c3"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 10395,
+      "path": "src/ecup_matching/inference_variant_routing.py",
+      "sha256": "8d111847dc0c2c3a7fa87f2694f95f81e9c0dfa6c9470ce212e1c8b6b4e01f89"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2513,
+      "path": "src/ecup_matching/llm_diagnostics.py",
+      "sha256": "01ddb55a9067b0b863a56cb528b20a536822a392fb7241fcfad6a3de2b6099ff"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2976,
+      "path": "src/ecup_matching/metrics.py",
+      "sha256": "efd86b1025e92be8854da7dcd4443f45b1e992897d1eefbb44699279e15ebac8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 14862,
+      "path": "src/ecup_matching/neural_data.py",
+      "sha256": "3f97ca903e6370d2a30f9c2803e735454d8f27709d587e1ad98be439cc21d9b7"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 12928,
+      "path": "src/ecup_matching/neural_ensemble.py",
+      "sha256": "c86bcbfb4d595d6cd9e4dcafbe259d153bfc87d07f321122ad1485f8ecade8e0"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 17540,
+      "path": "src/ecup_matching/neural_inference.py",
+      "sha256": "4353faeb3befef2a4b7e9d9aea119fce737e1e19ceed662f337ce598b5c21830"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 45245,
+      "path": "src/ecup_matching/neural_training.py",
+      "sha256": "c6ed2a244b946348e54c5fd76169d8cf8e636b27961322300fd4fdf12fc60f88"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 24820,
+      "path": "src/ecup_matching/release_ensemble_search.py",
+      "sha256": "bcd576925fa86bc2f1c49fa3cde88310999e390454f16e474129170b0ad1d072"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3695,
+      "path": "src/ecup_matching/release_evidence.py",
+      "sha256": "2d341e248a2d470cb117a0dbf1f87a5809fcc8682800433178fea7192961e7dd"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 14883,
+      "path": "src/ecup_matching/serialization.py",
+      "sha256": "d4975ff594640b97bba15c75d4adf21e1558c768b6dc9d107082aa9b2c775ce9"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 3601,
+      "path": "src/ecup_matching/splits.py",
+      "sha256": "296c242de8962e05bd52e27ebc805e04f562501ae442ac8163c7ee26e0cc5bca"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 5420,
+      "path": "src/ecup_matching/teacher_distillation.py",
+      "sha256": "5165c094f79cff4d00c25803a19a9807a28574276b48e3fde740c7ae462875bb"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 63,
+      "path": "submission_runtime/ecup_matching/__init__.py",
+      "sha256": "ebed644ea69569bf4ee07cb1d111579ea15f32733a1a1ec27db1ddf332f5b70c"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 409,
+      "path": "submission_runtime/ensemble_run.py",
+      "sha256": "f60d77c3ad199f57f22ec01014923ff7d821e4197e7fa6cf8ccf0720dadf84f8"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 587,
+      "path": "submission_runtime/neural_run.py",
+      "sha256": "15ee0cb1759bb25d911643fac6d6e5be342211bac8dba97dccf58d274346d04f"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 7200,
+      "path": "tests/test_build_neural_submission.py",
+      "sha256": "1fd7c89f528953227a1258c4e1cc54f942621a91772beb1bd9a7be8ba45abd73"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 4056,
+      "path": "tests/test_ensemble_inference.py",
+      "sha256": "c9231d12e730063092d9c9cefa2fb1c3183781494a712c347c69cea3f6b28a4f"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1064,
+      "path": "tests/test_metrics.py",
+      "sha256": "7acc2574905409b9904a400bcf4a46118c16cb2128077cf087e528c99e2ecdb3"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2320,
+      "path": "tests/test_neural_data.py",
+      "sha256": "901bb4e998d21948816ad2c6ae1e045e9c686c9a04bf967345508a2fc241db55"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 2141,
+      "path": "tests/test_neural_ensemble.py",
+      "sha256": "74fe621bc6a33407c9de33b378369340cfd8b7dbd051459e2e9a5190b9836407"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 14167,
+      "path": "tests/test_neural_training.py",
+      "sha256": "e02092af06f15bc3cb5d94c28374c3486a10aa46dae3f0b296759fc277ac1ec1"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1455,
+      "path": "tests/test_release_evidence.py",
+      "sha256": "113b1663b185db61bc2e371f794f86fff80ad89a40f0c930ef4b0b2da83ca97b"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 4609,
+      "path": "tests/test_serialization.py",
+      "sha256": "cfeb64769ffc4862ff245a9d419a73bcbaceb245df5dde50c4a89146a1b1146b"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 764,
+      "path": "tests/test_splits.py",
+      "sha256": "8984a4f541176b03dcc51769663a261ad481b1cd84be3f88659b5df91527322f"
+    },
+    {
+      "binary_artifact": false,
+      "bytes": 1638,
+      "path": "tests/test_teacher_distillation.py",
+      "sha256": "d78044422b5ff672b6f9ad2eda1741b4b58c3968da01e871949ab309f0f7f5cc"
+    }
+  ],
+  "package_type": "private_reproducibility_repository_review",
+  "privacy": {
+    "agent_material": false,
+    "credentials": false,
+    "local_paths": false,
+    "personal_information": false,
+    "version_control_metadata": false
+  },
+  "schema_version": 1
+}

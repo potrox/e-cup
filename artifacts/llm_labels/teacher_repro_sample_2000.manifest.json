@@ -1,0 +1,17 @@
+{
+  "protocol": "deterministic category-balanced teacher reproducibility sample",
+  "sample": {
+    "bytes": 766469,
+    "categories": 20,
+    "path": "teacher_repro_sample_2000.parquet",
+    "rows": 2000,
+    "rows_per_category": 100,
+    "seed": 2026,
+    "sha256": "ba316e8e3f520f5a0cdda7b1853d8f1a74e5f703ba5cc76c12d8a72ee14618d0"
+  },
+  "schema_version": 1,
+  "source": {
+    "rows": 80000,
+    "sha256": "cd147efe530bbe04e560533d02aac018a0d9884ba53493d6ec4a6e303e6e1ddc"
+  }
+}

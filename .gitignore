@@ -1,0 +1,2 @@
+artifacts/llm_labels/*.parquet
+artifacts/trained_models/*.zip.part-*
